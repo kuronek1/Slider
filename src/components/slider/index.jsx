@@ -28,10 +28,10 @@ export default function Slider() {
 
 const [slide, setSlide] = useState(0);
 
-const onClickNext = () => {
+const onClickPrev = () => {
   setSlide((prevSlide) => (prevSlide + 1) % sliderList.length);
 }
-const onClickPrev = () => {
+const onClickNext = () => {
   if(slide === 0) {
     setSlide(sliderList.length)
   }
@@ -62,7 +62,8 @@ return (
     />
   
     <Slides>
-      <img src={sliderList[slide]} alt={"slide № " + slide} />
+      <img src={sliderList[slide]} alt={"slide № " + slide} id="slide"/>
+      {console.log(sliderList[slide])}
     </Slides>
   </Div>
 )
